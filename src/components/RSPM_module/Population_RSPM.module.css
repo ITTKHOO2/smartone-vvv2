@@ -1,0 +1,399 @@
+/* ====== Layout หลัก ====== */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f0f3f8;
+  font-family: "Kanit", sans-serif;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: #f9f9f9;
+  padding: 30px 40px;
+}
+
+/* ====== Container หลัก ====== */
+.container {
+  flex: 1;
+  background-color: #fff;
+  width: 85%;
+  margin: 20px auto 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+}
+
+/* ====== หัวข้อหลัก ====== */
+.formTitle {
+  font-size: 1.5rem;
+  color: #003366;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* ====== Summary Section ====== */
+.summarySection {
+  width: 100%;
+  margin: 10px auto 25px auto;
+}
+
+.summaryHeader {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.summaryHeader h4 {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #003366;
+}
+
+/* ✅ ใช้ grid 4 คอลัมน์ ป้องกันการ์ดตก */
+.summaryContainer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* การ์ดแต่ละใบ */
+.summaryCard {
+  color: #fff;
+  border-radius: 10px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summaryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 8px 0 4px 0;
+}
+
+.summaryFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.icon {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* ====== Filter Section ====== */
+.filterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #f5f7fa;
+  border-radius: 8px;
+  padding: 15px 25px;
+  margin: 0 auto 25px auto;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.filterItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filterItem label {
+  color: #003366;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.filterContainer input,
+.filterContainer select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 6px 10px;
+  height: 36px;
+  min-width: 220px;
+  transition: 0.2s ease;
+  font-family: "Kanit", sans-serif;
+  font-size: 0.95rem;
+}
+
+.filterContainer input:focus,
+.filterContainer select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+  outline: none;
+}
+
+/* ====== ปุ่มเพิ่มประชาชน (อยู่ใต้ Filter) ====== */
+.addButtonRow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 10px 0;
+}
+
+.addButton {
+  background-color: #28a745;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Kanit", sans-serif;
+}
+
+.addButton:hover {
+  background-color: #1e7e34;
+  transform: translateY(-1px);
+}
+
+.addModalFooter {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ====== ตารางข้อมูล ====== */
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: "Kanit", sans-serif;
+  font-size: 0.95rem;
+}
+
+.dataTable th {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+.dataTable td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.95rem;
+  background: #ffffff;
+  transition: background 0.2s;
+}
+
+.dataTable tr:hover td {
+  background: #f0f8ff;
+}
+
+/* แถวตอน “ไม่พบข้อมูล” */
+.emptyState {
+  padding: 18px;
+  text-align: center;
+  color: #6b7280;
+  background: #f9fafb;
+}
+
+/* ====== ปุ่มดูข้อมูล ====== */
+.viewButton {
+  background-color: #0b57d0;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-family: "Kanit", sans-serif;
+}
+
+.viewButton:hover {
+  background-color: #0845a6;
+  transform: translateY(-1px);
+}
+
+/* ============================
+   🔹 Modal แสดงข้อมูล / เพิ่มข้อมูล
+   ============================ */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalBox {
+  background: #ffffff;
+  border-radius: 14px;
+  width: min(640px, 95vw);
+  max-height: 80vh;
+  padding: 24px 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+}
+
+/* หัว modal */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #003366;
+}
+
+/* ปุ่มปิดมุมขวา */
+.modalClose {
+  border: none;
+  background: #e0e7ff;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a237e;
+  transition: 0.2s ease;
+}
+
+.modalClose:hover {
+  background: #c5cae9;
+  transform: scale(1.05);
+}
+
+/* เนื้อหาใน modal */
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalRow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.modalRow label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #003366;
+  margin-bottom: 4px;
+}
+
+/* input / select ใน modal */
+.modalRow input,
+.modalRow select {
+  border-radius: 8px;
+  border: 1px solid #d0d7e2;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+}
+
+.modalRow input:focus,
+.modalRow select:focus {
+  outline: none;
+  border-color: #0b57d0;
+  box-shadow: 0 0 4px rgba(11, 87, 208, 0.3);
+}
+
+.modalRow span {
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #d0d7e2;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 1200px) {
+  .summaryContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 20px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .summaryContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .filterContainer input,
+  .filterContainer select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .modalBox {
+    width: 95vw;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 599px) {
+  .container {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .formTitle {
+    font-size: 1.25rem;
+  }
+}

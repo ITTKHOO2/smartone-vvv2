@@ -1,0 +1,190 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f0f3f8;
+    font-family: "Kanit", sans-serif;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #f9f9f9;
+    padding: 30px 40px;
+}
+
+.container {
+    flex: 1;
+    background: #fff;
+    width: 85%;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.summarySection {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.summaryHeader {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.summaryHeader h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #003366;
+}
+
+.summaryContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.summaryCard {
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 22px;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    transition: .2s;
+}
+
+.summaryCard:hover {
+    transform: translateY(-4px);
+}
+
+.value {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.summaryFooter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    font-size: 1.4rem;
+}
+
+.filterContainer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    background: #f5f7fa;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+}
+
+.filterItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterItem input {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 6px;
+    min-width: 200px;
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dataTable th {
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+}
+
+.dataTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.viewButton {
+    background: #0b57d0;
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.viewButton:hover {
+    background: #0845a3;
+}
+
+/* ---- Modal ---- */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBox {
+    background: #fff;
+    width: min(500px, 90vw);
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modalHeader {
+    background: #0b57d0;
+    color: #fff;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalClose {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.modalBody {
+    padding: 20px;
+}
+
+.modalRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.modalRow span {
+    background: #f5f7fa;
+    padding: 8px 10px;
+    border-radius: 6px;
+}

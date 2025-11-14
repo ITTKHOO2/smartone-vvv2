@@ -1,0 +1,332 @@
+/* ==========================================
+   LAYOUT หลัก
+   ========================================== */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f0f3f8;
+    font-family: "Kanit", sans-serif;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #f9f9f9;
+    padding: 30px 40px;
+}
+
+/* ==========================================
+   CONTENT BOX
+   ========================================== */
+.container {
+    flex: 1;
+    background-color: #fff;
+    width: 85%;
+    margin: 20px auto 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+.formTitle {
+    font-size: 1.5rem;
+    color: #003366;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #0b57d0;
+    padding-bottom: 10px;
+}
+
+/* ==========================================
+   SUMMARY SECTION
+   ========================================== */
+.summarySection {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.summaryHeader {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.summaryHeader h4 {
+    font-size: 1.15rem;
+    color: #003366;
+    font-weight: 600;
+}
+
+.summaryContainer {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.summaryCard {
+    background: #0b57d0;
+    color: #fff;
+    border-radius: 14px;
+    padding: 20px 25px;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 40, 120, 0.25);
+    transition: 0.2s;
+}
+
+.summaryCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 40, 120, 0.35);
+}
+
+.summaryFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+/* ==========================================
+   FILTER SECTION
+   ========================================== */
+.filterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #f5f7fa;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 20, 60, 0.06);
+    margin-bottom: 25px;
+}
+
+.filterItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filterItem label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #003366;
+}
+
+.filterItem input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 260px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.filterItem input:focus {
+    border-color: #0b57d0;
+    box-shadow: 0 0 4px rgba(0, 87, 208, 0.4);
+    outline: none;
+}
+
+/* ==========================================
+   TABLE
+   ========================================== */
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.dataTable th {
+    background: #0b57d0;
+    color: white;
+    padding: 12px;
+    border: 1px solid #cdd4e5;
+    font-weight: 600;
+}
+
+.dataTable td {
+    padding: 10px;
+    border: 1px solid #e1e5ee;
+    text-align: center;
+    background: #ffffff;
+    transition: 0.2s;
+}
+
+.dataTable tr:hover td {
+    background: #eef4ff;
+}
+
+.emptyState {
+    padding: 18px;
+    text-align: center;
+    background: #f4f6fa;
+    color: #6b7280;
+}
+
+/* ปุ่มดูรายละเอียด */
+.viewButton {
+    background: #0b57d0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.viewButton:hover {
+    background: #0846ad;
+}
+
+/* ==========================================
+   MODAL OVERLAY
+   ========================================== */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+}
+
+/* ==========================================
+   MODAL BOX
+   ========================================== */
+.modalBox {
+    width: 520px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    animation: fadeUp 0.25s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e6f5;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.modalHeader h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #003366;
+    font-weight: 700;
+}
+
+.modalClose {
+    font-size: 1.4rem;
+    background: transparent;
+    color: #666;
+    border: none;
+    cursor: pointer;
+}
+
+.modalClose:hover {
+    color: #000;
+}
+
+/* ==========================================
+   MODAL BODY
+   ========================================== */
+.modalBody {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modalRow {
+    display: flex;
+    flex-direction: column;
+}
+
+.modalRow label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 4px;
+}
+
+.modalRow span {
+    background: #f8faff;
+    padding: 9px 12px;
+    border: 1px solid #d0d7e2;
+    border-radius: 8px;
+    color: #333;
+    line-height: 1.55;
+}
+
+/* ==========================================
+   STAFF LIST (รายชื่อเจ้าหน้าที่)
+   ========================================== */
+.staffList {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.staffItem {
+    padding: 8px 10px;
+    border-bottom: 1px dashed #ccd5e1;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.staffItem strong {
+    color: #0b3d91;
+}
+
+.staffItem:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    .modalBox {
+        width: 92%;
+    }
+}
