@@ -3,6 +3,7 @@ import { FaRegUser } from "react-icons/fa";
 import styles from "../styles/Header.module.css";
 import { useNavigate } from "react-router-dom"; // ✅ ใช้ react-router-dom แทน next/router
 import logo from "../assets/images/logo.png";
+
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<string | null>(null);
@@ -21,7 +22,7 @@ const Header: React.FC = () => {
   };
 
   return (
-   <header className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.logoContainer}>
         <img
           src={logo} // ✅ ใช้ตัวแปรแทน path

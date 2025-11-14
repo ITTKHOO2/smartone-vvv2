@@ -1,0 +1,351 @@
+/* ====== Layout หลัก ====== */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f0f3f8;
+    font-family: "Kanit", sans-serif;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #f9f9f9;
+    padding: 30px 40px;
+}
+
+/* ====== Container หลัก ====== */
+.container {
+    flex: 1;
+    background-color: #fff;
+    width: 85%;
+    margin: 20px auto 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+/* ====== Title ====== */
+.formTitle {
+    font-size: 1.6rem;
+    color: #003366;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+}
+
+/* ===== Summary Section ===== */
+.summarySection {
+    width: 100%;
+    margin: 10px auto 30px auto;
+}
+
+.summaryHeader {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.summaryHeader h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+    color: #003366;
+}
+
+/* Summary Cards */
+.summaryContainer {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.summaryCard {
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    min-height: 130px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease;
+}
+
+.summaryCard:hover {
+    transform: translateY(-4px);
+}
+
+.value {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 8px 0 4px 0;
+}
+
+.summaryFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.4rem;
+}
+
+/* ===== Filter Section ===== */
+.filterContainer {
+    display: flex;
+    gap: 15px;
+    background: #f5f7fa;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filterItem {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filterItem label {
+    font-weight: 600;
+    color: #003366;
+}
+
+.filterContainer input,
+.filterContainer select {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 10px;
+    min-width: 220px;
+    height: 36px;
+    font-family: "Kanit", sans-serif;
+    transition: 0.2s ease;
+}
+
+.filterContainer input:focus,
+.filterContainer select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* ===== Add Button ===== */
+.addButtonRow {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.addButton {
+    background: #16a34a;
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.addButton:hover {
+    background: #138a3f;
+}
+
+/* ===== Table ===== */
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.dataTable th {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+}
+
+.dataTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+}
+
+.dataTable tr:hover td {
+    background: #eef7ff;
+}
+
+.emptyState {
+    padding: 15px;
+    text-align: center;
+    background: #f9fafb;
+    color: #777;
+}
+
+/* ===== Action Buttons ===== */
+.viewButton {
+    background-color: #0b57d0;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s ease;
+}
+
+.viewButton:hover {
+    background-color: #0947ad;
+}
+
+.toggleButton {
+    background: #f97316;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-left: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.toggleButton:hover {
+    background: #ea580c;
+}
+
+/* ===== Status Badge ===== */
+.statusBadge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.statusActive {
+    background: #e6f4ea;
+    color: #137333;
+}
+
+.statusInactive {
+    background: #fde7e7;
+    color: #b91c1c;
+}
+
+/* ===== Modal ===== */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.modalBox {
+    width: min(650px, 90vw);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+    animation: fadeIn 0.2s ease-out;
+    overflow: hidden;
+}
+
+.modalHeader {
+    padding: 14px 18px;
+    background: linear-gradient(90deg, #0b57d0, #1565c0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.modalClose {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.modalBody {
+    padding: 20px;
+}
+
+.modalRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.modalRow label {
+    font-weight: 600;
+    color: #003366;
+}
+
+.modalRow span {
+    background: #f9fafb;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    color: #111;
+}
+
+/* Input inside modal */
+.input,
+.textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: "Kanit", sans-serif;
+}
+
+.textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Modal footer */
+.addModalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cancelButton {
+    background: #9ca3af;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cancelButton:hover {
+    background: #6b7280;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
