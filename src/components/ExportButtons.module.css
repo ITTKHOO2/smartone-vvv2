@@ -1,0 +1,117 @@
+* {
+  font-family: "Kanit", sans-serif;
+}
+.exportContainer {
+  display: flex;
+  gap: 8px;
+  background: #f8f9fa;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.exportBtn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 38px;
+}
+
+.exportBtn:hover {
+  background: #e9f3ff;
+  border-color: #007bff;
+  color: #007bff;
+  transform: translateY(-1px);
+}
+.exportContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.exportBtn {
+  border: none;
+  background: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+.exportBtn:hover {
+  background-color: #f0f0f0;
+}
+
+/* 🪟 Preview Modal */
+.previewOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.previewBox {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.previewTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.previewTable th,
+.previewTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.previewTable th {
+  background: #1976d2;
+  color: white;
+}
+
+.previewButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.confirmBtn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.cancelBtn {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+}

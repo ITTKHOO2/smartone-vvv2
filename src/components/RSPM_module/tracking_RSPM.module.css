@@ -1,0 +1,1043 @@
+/* ====== Layout หลัก ====== */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;      /* ให้ภายในเรียงแนวตั้ง */
+  align-items: center;         /* ✅ ให้เนื้อหาภายในอยู่กลางด้วย */
+  width: 100%;                  /* ✅ กำหนดความกว้าง 60% */
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 30px 40px;
+}
+
+/* ====== พื้นที่เนื้อหาหลัก ====== */
+.container {
+  flex: 1;
+  padding: 30px 40px;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  width: 75%;                 /* กำหนดความกว้าง 60% ของหน้าจอ */
+  margin: 40px auto;          /* จัดให้อยู่กลางแนวนอน */
+  border-radius: 10px;        /* เพิ่มขอบมน */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูเด่น */
+}
+
+.formTitle {
+  position: fixed;            
+  top: 80px;                  /* ✅ ปรับตามความสูง Header */
+  left: 50%;                  /* ✅ วางตำแหน่งกลางแนวนอน */
+  transform: translateX(-50%);/* ✅ จัดให้อยู่ตรงกลางจริง ๆ */
+  z-index: 99;                
+  background-color: #ffffff;  
+  color: #003366;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 12px 30px;
+  width: 100%;                 /* ✅ ความกว้างพอดีกับ container */
+     
+  font-family: 'Kanit', sans-serif;
+  align-items: center;
+  margin-left: 276px;        /* ✅ เลื่อนขวานิดหน่อยให้พอดีกับ container */
+}
+
+/* ====== โครงฟอร์ม ====== */
+.setsec{
+ padding: 15px;
+  margin-top: -20px;
+  background: #fff;   
+}
+.section {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+.section {
+  position: relative;              /* ✅ ให้ลูกใช้ position absolute ได้ */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 25px 15px 15px 15px;    /* ✅ เว้นพื้นที่ด้านบนไว้ให้หัวข้อ */
+}
+
+/* ===== 🔹 ผู้ร้องเรียน ===== */
+.section.complainant {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* ระยะระหว่างแต่ละบรรทัด */
+  padding-left: 10px;
+}
+
+.section.complainant .row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px; /* ✅ ห่างระหว่าง label และ input */
+}
+
+/* ✅ label อยู่ชิดซ้ายสุด */
+.section.complainant .row label {
+  width: 300px;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Kanit', sans-serif;
+  color: #003366;
+}
+
+/* ✅ input ทุกช่องอยู่ทางขวา */
+.section.complainant .row input {
+  height: 27px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 4px 8px;
+  transition: 0.2s ease;
+}
+
+/* ✅ เฉพาะแถว “ชื่อ นามสกุล” ให้ input เป็นแนวนอน */
+.section.complainant .nameRow {
+  display: flex;
+  align-items: center;
+  gap: 0px; /* ✅ ระยะระหว่าง label กับช่องแรก */
+  margin-left: 0px;
+}
+
+.section.complainant .nameRow input {
+  --name-input-width: 120px;   /* ✅ เปลี่ยนค่าตรงนี้เพื่อควบคุมขนาดได้ */
+  width: var(--name-input-width);
+  margin-left: 80px;           /* ✅ ขยับไปทางขวา */
+  margin-right: 90px;           /* ✅ ระยะห่างระหว่างชื่อ-นามสกุล */
+  height: 27px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 4px 8px;
+  transition: 0.2s ease;
+}
+
+.section.complainant .nameRow input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* ✅ เบอร์โทรศัพท์ใช้ขนาด small */
+.section.complainant .phoneRow input {
+  width: 510px;
+}
+
+/* ===== 🔹 ผู้ร้องเรียน — ขยับเฉพาะ input ไปขวา 80px ===== */
+.section.complainant .row input {
+  width: 340px;
+    margin-left:-100px; /* ✅ ขยับ input ไปทางขวา */
+}
+
+
+
+.section.complainant .phoneRow input {
+  width: 340px; /* ✅ ขนาด inputSmall */
+  margin-left: -100px; /* ✅ ขยับไปขวาเหมือนกัน */
+}
+
+/* ✅ ปุ่มค้นหา ยังคงอยู่ต่อจาก input */
+.section.complainant .searchBtn {
+  margin-left: 380px; /* ✅ ระยะระหว่าง input กับปุ่มค้นหา */
+}
+
+
+/* ✅ ปุ่มค้นหา */
+.section.complainant .searchBtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.section.complainant .searchBtn:hover {
+  background-color: #0056b3;
+}
+
+/* ✅ เฉพาะช่อง "ชื่อ นามสกุล" ให้ input อยู่แนวนอน */
+.section .row.nameRow div {
+  display: flex;
+  flex-direction: row; /* ✅ เรียงแนวนอน */
+  align-items: center;
+  gap: px;            /* ระยะห่างระหว่างช่อง */
+}
+
+/* ✅ ปรับ inputSmall สำหรับชื่อและนามสกุล */
+.section .row.nameRow input {
+                                      /* ✅ ใช้ขนาด inputSmall */
+  height: 27px;
+  border: 1px solid #0a0a0a;
+  transition: 0.2s ease;
+  margin-left:-70px;
+}
+
+.section .row.nameRow input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.section .row label {
+  width: 220px;              /* ✅ ขนาด label */
+  text-align: left;          /* ✅ ชิดซ้าย container */
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #003366;
+  font-family: 'Kanit', sans-serif;
+  margin-left: 0;            /* ✅ ชิดซ้าย container */
+}
+
+/* ✅ กล่อง input เรียงเป็น column ทางขวา */
+.section .row div {
+  display: flex;
+  flex-direction: column;    /* ✅ เรียง input ลงแนวตั้ง */
+  gap: 8px;
+  flex: 1;                   /* ✅ ขยายให้เต็มที่ทางขวา */
+}
+
+/* ✅ ปรับ input ให้ชิด label ทางขวา */
+
+.section .row input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* ✅ ปุ่มค้นหาอยู่ขวาของ input */
+.section .row .searchBtn {
+  width: fit-content;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 15px;
+  margin-top: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+.section .row .searchBtn:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* ✅ หัวข้อแท็บมุมซ้าย */
+.section h3 {
+  position: absolute;
+  top: -14px;                      /* ✅ ยกหัวข้อขึ้นให้ทับขอบบน */
+  left: 10px;                      /* ✅ ชิดซ้ายและห่างขอบ 10px */
+  background: #fff;                /* ✅ พื้นหลังขาวซ้อนบนขอบ */
+  padding: 0 10px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #007bff;
+  border-radius: 5px 5px 0 0;      /* ✅ มุมบนโค้งนิดหน่อย */
+}
+.section.highlight {
+  background: linear-gradient(180deg, #e9f3ff, #ffffff);
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #004a99;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+/* ====== ปรับขนาดฟอนต์ของ label ====== */
+label {
+  /* font-family: 'Kanit', sans-serif; */
+  font-size: 1.10rem;        /* ✅ ขยายขนาดฟอนต์ (1rem = 16px โดยประมาณ) */
+  font-weight: 600;          /* ✅ ทำให้ตัวหนาเล็กน้อย ดูชัดขึ้น */
+  color: #003366;            /* ✅ สีเข้มขึ้นเล็กน้อยให้อ่านง่าย */
+  margin-right: 5px;         /* เพิ่มระยะห่างระหว่าง label กับ input */
+  display: inline-block;
+}
+
+
+
+/* ====== ปรับขนาด input แต่ละช่องได้เอง ====== */
+
+.inputSmall {
+  width: 120px;
+  height: 27px;
+}
+
+.inputMedium {
+  width: 250px;
+  height: 27px;
+
+}
+
+.inputLarge {
+  width: 400px;
+  height: 27px;
+}
+
+.inputAddress {
+  width: 400px;
+  height: 70px;
+}
+
+
+/* ====== ปุ่มค้นหา ====== */
+.searchBtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.3s;
+}
+
+.searchBtn:hover {
+  background-color: #0056b3;
+}
+
+/* ====== Avatar ====== */
+.grid2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;            /* ✅ ระยะห่างแต่ละบรรทัด */
+  flex: 1;
+}
+
+/* ===== 🔹 แถวข้อมูลผู้ถูกร้องเรียน ===== */
+.rowLine {
+  display: flex;
+  flex-direction: row;  /* ✅ label อยู่ซ้าย input อยู่ขวา */
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;            /* ✅ ระยะห่างระหว่าง label กับ input */
+}
+
+/* ✅ label */
+.rowLine label {
+  width: 200px;         /* ✅ ความกว้าง label */
+  text-align: left;
+  font-weight: 600;
+  color: #003366;
+  font-family: 'Kanit', sans-serif;
+  margin-top: 5px;
+}
+
+/* ✅ input แต่ละช่องอยู่แยกกัน (ไม่ทับกัน) */
+.rowLine input {
+  width: 27%;           /* ✅ ขนาด input ปกติ */
+  margin-left: 11px;       /* ✅ ไม่ต้องขยับซ้าย */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 28px;
+  padding: 4px 8px;
+  transition: 0.2s ease;
+}
+
+/* ✅ ช่อง “ที่อยู่” กว้างพิเศษ */
+.rowLine input[type="text"].inputAddress {
+  width: 100%;
+  height: 60px;
+}
+
+/* ✅ ปรับระยะเล็กน้อยให้เรียงสวย */
+.rowLine:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+
+
+/* ✅ กล่อง avatar อยู่ภายใน container เดียวกัน */
+.avatarBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 210px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  flex-shrink: 0;
+  margin-bottom: 13px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.avatarBox:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.avatarBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ====== แผนที่ ====== */
+.mapRow {
+  display: flex;
+  align-items: flex-start; /* ✅ ให้ label อยู่บนสุดตรงกับขอบแผนที่ */
+  gap: 5px;              /* ✅ ระยะห่างระหว่าง label กับแผนที่ */
+}
+
+.mapRow label {
+  width: 200px;           /* ✅ กำหนดความกว้าง label พอดี */
+  font-weight: 600;
+  color: #003366;
+  font-family: 'Kanit', sans-serif;
+  text-align: left;
+  margin-top: 5px;        /* ✅ ขยับลงเล็กน้อยให้เสมอแผนที่ */
+}
+
+.mapContainer {
+  flex: 1;                /* ✅ ให้แผนที่กินพื้นที่ที่เหลือทั้งหมด */
+  height: 100px;
+}
+
+.mapContainer iframe {
+  width: 90%;
+  height: 100%;
+  border-radius: 8px;
+}
+.mapSection {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.mapContainer {
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ✅ กล่องของพิกัด */
+.mapSection {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: none; /* ใช้ border บาง ๆ ก่อน */
+  min-height: 450px;        /* ✅ กัน container collapse */
+  z-index: 1;
+}
+
+/* ✅ ตัวแผนที่เอง */
+.leafletMap {
+width: 668px;
+  height: 400px;
+  margin-left: 208px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 0; 
+}
+
+/* ✅ React-Leaflet จะ inject .leaflet-container ภายใน */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  
+}
+.inputSmall1 {
+  width: 120px;
+  height: 27px;
+  margin-left: -5px;
+}
+
+
+/* ====== พื้นที่รูปภาพ ====== */
+.rowImage {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.rowImage textarea {
+  flex: 1;
+  height: 120px;
+}
+
+/* ====== ปุ่มบันทึก / ยกเลิก ====== */
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.saveBtn,
+.cancelBtn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.saveBtn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.saveBtn:hover {
+  background-color: #1f7e33;
+}
+
+.cancelBtn {
+  background-color: #ccc;
+  color: #000;
+}
+
+.cancelBtn:hover {
+  background-color: #999;
+}
+/* ====== กล่องอัปโหลดรูปภาพ ====== */
+.rowImage {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+    margin-left: 140px;
+    margin-top: -10px;         /* ✅ ขยับไปทางขวา 30px */
+}
+
+.imageBox {
+  width: 210px;          /* ✅ ปรับความกว้าง */
+  height: 170px;          /* ✅ ปรับความสูง */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: px;     /* ✅ ขยับไปทางขวา 50px */
+}
+
+
+.imageBox:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+/* ✅ รูปตัวอย่างหลังอัปโหลด */
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ✅ เครื่องหมาย + กลางกล่อง */
+.placeholderText {
+  font-size: 2.5rem;
+  color: #aaa;
+  font-weight: 300;
+  pointer-events: none;
+  user-select: none;
+}
+/* ====== เมื่อ Sidebar เปิด ให้ container ขยับไปทางขวา ====== */
+body.sidebar-open .container {
+  transform: translateX(100px);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ===============================
+   📱 Responsive Layout
+   รองรับทุกขนาดหน้าจอ
+================================*/
+
+/* 🖥️ ขนาดใหญ่ (Desktop > 1200px) */
+@media (min-width: 1200px) {
+  .container {
+    width: 75%;
+  }
+
+  .section.complainant .row label {
+    width: 300px;
+  }
+
+  .section.complainant .row input {
+    width: 240px;
+  }
+
+  .section.complainant .nameRow input {
+    --name-input-width: 120px;
+  }
+}
+
+/* 💻 ขนาดกลาง (Laptop / Tablet แนวนอน: 992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .container {
+    width: 85%;
+    padding: 20px 25px;
+  }
+
+  .section.complainant .row label {
+    width: 250px;
+  }
+
+  .section.complainant .row input {
+    width: 300px;
+    margin-left: 40px;
+  }
+
+  .section.complainant .nameRow input {
+    --name-input-width: 100px;
+    margin-left: 40px;
+  }
+
+  .formTitle {
+    font-size: 1.3rem;
+    margin-left: 320px;
+  }
+}
+
+/* 📱 Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .section.complainant {
+    padding-left: 5px;
+  }
+
+  .section.complainant .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .section.complainant .row label {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .section.complainant .row input {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .section.complainant .nameRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section.complainant .nameRow input {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .searchBtn {
+    align-self: flex-start;
+  }
+
+  .formTitle {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+}
+
+/* 📲 มือถือแนวนอน (600px - 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .section.complainant .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .section.complainant .row label {
+    width: 100%;
+  }
+
+  .section.complainant .row input,
+  .section.complainant .nameRow input {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .formTitle {
+    font-size: 1.1rem;
+    top: 70px;
+  }
+
+  .avatarBox {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* 📱 มือถือเล็ก (ต่ำกว่า 600px) */
+@media (max-width: 599px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+    margin: 20px auto;
+    box-shadow: none;
+  }
+
+  .formTitle {
+    position: relative;
+    margin-left: 0;
+    top: 0;
+    transform: none;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .section.complainant {
+    padding-left: 0;
+  }
+
+  .section.complainant .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .section.complainant .row label {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .section.complainant .row input,
+  .section.complainant .nameRow input {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .section.complainant .searchBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .avatarBox {
+    width: 100px;
+    height: 100px;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .saveBtn,
+  .cancelBtn {
+    width: 100%;
+  }
+}
+/* ====== เมื่อ Sidebar เปิด ให้ Tracking Container ขยับไปทางขวา ====== */
+body.sidebar-open .mainContainer {
+  transform: translateX(300px);   /* ✅ ขยับไปเท่าความกว้าง Sidebar (300px) */
+  transition: transform 0.35s ease-in-out;
+}
+
+/* ✅ ปรับสำหรับหน้าจอเล็ก (Sidebar 250px) */
+@media (max-width: 768px) {
+  body.sidebar-open .container {
+    transform: translateX(250px); /* ✅ ขยับตามความกว้าง sidebar มือถือ */
+  }
+}
+.section .row input.inputSmall {
+  width: 200px;
+  height: 27px;
+}
+
+.section .row input.inputMedium {
+  width: 436px;
+  height: 27px;
+}
+
+.section .row input.inputLarge {
+  width: 668px;
+  height: 70px;
+}
+.section .row input.inputSemilarge {
+  width: 436px;
+  height: 70px;
+}
+
+/* ในไฟล์ .module.css */
+.inputSmall[type="date"]::-webkit-datetime-edit {
+  color: transparent;
+}
+
+.inputSmall[type="date"]:focus::-webkit-datetime-edit {
+  color: initial;
+}
+/* ซ่อน placeholder ของ input datetime-local */
+input[type="datetime-local"]::-webkit-datetime-edit {
+  color: transparent;   /* ✅ ซ่อน mm/dd/yyyy และเวลา */
+}
+
+input[type="datetime-local"]:focus::-webkit-datetime-edit {
+  color: initial;       /* ✅ แสดงเมื่อโฟกัส (คลิก) */
+}
+
+/* ✅ ปรับให้ปุ่ม calendar/time ยังแสดง */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  cursor: pointer;
+}
+/* ===== ปรับขนาด inputSemilarge ให้ใช้ได้ทุกที่ ===== */
+.inputSemilarge {
+  width: 436px;  /* ✅ ความกว้าง */
+  height: 70px;  /* ✅ ความสูง */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 4px 8px;
+  transition: 0.2s ease;
+}
+.textAreaLarge {
+  width: 430px;            /* ความกว้างเต็มพื้นที่ขวา */
+  min-height: 80px;       /* ความสูงเริ่มต้น */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1rem;
+  overflow-wrap: break-word; /* ✅ ตัดคำเมื่อถึงขอบ */
+  word-break: break-word;    /* ✅ ตัดคำภาษาไทย/อังกฤษ */
+  white-space: pre-wrap;     /* ✅ เว้นบรรทัดตามที่พิมพ์ */
+  transition: 0.2s ease;
+  margin-left: -5px;
+}
+
+.textAreaLarge:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.textAreaLarge1 {
+  width: 435px;            /* ความกว้างเต็มพื้นที่ขวา */
+  min-height: 80px;       /* ความสูงเริ่มต้น */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1rem;
+  overflow-wrap: break-word; /* ✅ ตัดคำเมื่อถึงขอบ */
+  word-break: break-word;    /* ✅ ตัดคำภาษาไทย/อังกฤษ */
+  white-space: pre-wrap;     /* ✅ เว้นบรรทัดตามที่พิมพ์ */
+  transition: 0.2s ease;
+  margin-left: -5px;
+}
+.textAreaLarge1:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+.textAreaLarge2 {
+  width: 400px;            /* ความกว้างเต็มพื้นที่ขวา */
+  min-height: 80px;       /* ความสูงเริ่มต้น */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1rem;
+  overflow-wrap: break-word; /* ✅ ตัดคำเมื่อถึงขอบ */
+  word-break: break-word;    /* ✅ ตัดคำภาษาไทย/อังกฤษ */
+  white-space: pre-wrap;     /* ✅ เว้นบรรทัดตามที่พิมพ์ */
+  transition: 0.2s ease;
+  margin-left: -5px;
+}
+.textAreaLarge2:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+/* 🔹 ปุ่มอ่านบัตรประชาชน (ค้นหา) */
+.cardReaderBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.readCardBtn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.readCardBtn:hover {
+  background: linear-gradient(135deg, #2196f3, #1e88e5);
+  transform: translateY(-1px);
+}
+
+.readCardBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.errorText {
+  color: #e53935;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+/* 🔹 โครงของกล่องพิกัด */
+.mapSection {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* 🔹 หัวข้อใหญ่ “พิกัดปัญหา” */
+.coordTitle {
+  display: block;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+/* 🔹 กล่องของ Latitude */
+.latField {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 20px;  /* ✅ ระยะห่างจาก Longitude */
+}
+
+/* 🔹 แถวรวม Latitude/Longitude */
+.coordRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;               /* ✅ ระยะห่างระหว่างสองช่อง */
+  margin-bottom: 10px;
+  margin-left: 202px;       /* ✅ จัดให้ตรงแนวกับ label ฟอร์ม */
+}
+
+/* 🔹 กล่องของ Latitude */
+.latField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.latLabel {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  color: #004a99;
+  font-size: 1rem;
+  width: 90px;             /* ✅ ความกว้าง label */
+  text-align: right;       /* ✅ label ชิดขวา */
+}
+
+.inputLat {
+  width: 200px;
+  height: 27px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 4px 8px;
+  transition: 0.2s ease;
+  
+}
+
+/* 🔹 กล่องของ Longitude */
+.lngField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lngLabel {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  color: #004a99;
+  font-size: 1rem;
+  width: 90px;             /* ✅ ความกว้าง label */
+  text-align: right;
+}
+
+.inputLng {
+  width: 200px;
+  height: 27px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 4px 8px;
+  transition: 0.2s ease;
+}
+
+
+/* 🔹 ปรับขนาดแผนที่ */
+.leafletMap {
+width: 659px;
+  height: 400px;
+  margin-left: 214px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}

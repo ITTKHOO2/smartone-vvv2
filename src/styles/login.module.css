@@ -1,0 +1,357 @@
+/* ✅ container ครอบทั้งหน้า ต้องสูงเต็มจอ */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* ทำให้สูงเต็มจอ */
+}
+
+/* ซ้าย = รูป */
+.left {
+  flex: 1;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ขวา = ฟอร์ม */
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* ✅ ใช้ column เพื่อให้ Footer ไปอยู่ล่าง */
+  justify-content: space-between; /* ดัน footer ลงล่าง */
+  align-items: center;
+  background-color: #fff;
+}
+
+/* ฟอร์ม login */
+.formContainer {
+  width: 80%;
+  max-width: 400px;
+  margin-top: 50px;
+}
+
+/* Footer ให้อยู่ล่าง */
+footer {
+  margin-top: auto; /* ✅ ดัน footer ลงล่าง */
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.formContainer {
+  max-width: 350px;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  position: relative;
+}
+
+.languageToggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.languageButton {
+  padding: 5px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.languageButton:hover {
+  background-color: #f0f0f0;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.welcome {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.orDivider {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin: 1rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #ced4da;
+}
+
+.orDivider::before {
+  left: 0;
+}
+
+.orDivider::after {
+  right: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.input {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.passwordContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+}
+
+.remember input {
+  margin-right: 0.5rem;
+}
+
+.forgot {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-align: right;
+  display: block;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.button {
+  padding: 10px;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #23272b;
+}
+
+/* Glassmorphism Effect from https://css.glass */
+.glassForm {
+  background: rgba(255, 255, 255, 0.46);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Animation for form entrance */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animateSlide {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Mac OS Style Button */
+.macButton {
+  padding: 10px 20px;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.macButton:hover {
+  background-color: #23272b;
+  transform: translateY(-2px);
+}
+
+/* Enhanced Icon Styling */
+.enhancedIcon {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+.enhancedIcon:hover {
+  color: #0056b3;
+}
+
+/* Enhanced Responsive Design for Multiple Devices */
+@media (max-width: 1200px) {
+  .formContainer {
+    max-width: 320px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left, .right {
+    max-width: 100%;
+    height: auto;
+  }
+  .left {
+    height: 40vh;
+    margin-bottom: 20px;
+  }
+  .right {
+    padding: 20px;
+  }
+  .formContainer {
+    max-width: 90%;
+    padding: 25px;
+  }
+  .glassForm {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .left {
+    height: 30vh;
+  }
+  .formContainer {
+    padding: 20px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .subtitle {
+    font-size: 0.85rem;
+  }
+  .input, .button {
+    font-size: 0.85rem;
+    padding: 9px;
+  }
+  .label {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .left {
+    height: 25vh;
+  }
+  .right {
+    padding: 15px;
+  }
+  .formContainer {
+    padding: 15px;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .subtitle {
+    font-size: 0.75rem;
+  }
+  .input, .button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+  .label {
+    font-size: 0.8rem;
+  }
+  .macButton {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+  .languageButton {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  .eyeIcon {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .container {
+    height: auto;
+    overflow-y: auto;
+  }
+  .left, .right {
+    height: auto;
+  }
+  .formContainer {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}

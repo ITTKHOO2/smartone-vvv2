@@ -1,0 +1,118 @@
+/* styles/sidebar.module.css */
+.sidebar {
+  position: fixed;
+  top: 92px;                  /* ✅ ล็อกตำแหน่งให้ตรงที่ต้องการ */
+  left: 0;
+  width: 300px;
+  bottom: 0;                  /* ✅ ยืดความสูงลงถึงขอบล่างของหน้าจอ */
+  background-color: #1a5eb8;
+  color: white;
+
+  /* ✅ ให้เลื่อนได้แต่ไม่แสดง scrollbar */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE/Edge */
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1100;
+}
+
+/* ✅ Chrome / Safari / Edge */
+.sidebar::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.hide {
+  transform: translateX(-100%);
+}
+
+.sidebarSection {
+  padding: 16px;
+}
+
+.sidebarTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ====== Hamburger ====== */
+.hamburger {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background: #198754;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1200;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+  .sidebar {
+    z-index: 1100;
+  }
+}
+
+body.sidebar-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* ✅ Responsive (มือถือ) */
+@media (max-width: 768px) {
+  .sidebar {
+    top: 0;
+    height: 100vh;
+    width: 250px;
+  }
+  .hide {
+    transform: translateX(-250px);
+  }
+  .open {
+    transform: translateX(0);
+  }
+  .hamburger {
+    z-index: 1200;
+  }
+}
+
+/* ป้องกัน content overlap */
+.content {
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.content.sidebar-open {
+  margin-left: 300px;
+}
+
+@media (max-width: 768px) {
+  .content.sidebar-open {
+    margin-left: 250px;
+  }
+}
