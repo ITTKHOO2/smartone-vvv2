@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaRegUser } from "react-icons/fa";
 import styles from "../styles/Header.module.css";
 import { useNavigate } from "react-router-dom"; // ✅ ใช้ react-router-dom แทน next/router
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo.webp";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();

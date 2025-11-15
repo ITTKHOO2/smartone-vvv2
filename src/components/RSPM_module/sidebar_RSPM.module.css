@@ -5,7 +5,7 @@
   left: 0;
   width: 300px;
   bottom: 0;                  /* ✅ ยืดความสูงลงถึงขอบล่างของหน้าจอ */
-  background-color: #1a5eb8;
+  background: linear-gradient(135deg, #0d6efd, #5597e7);
   color: white;
 
   /* ✅ ให้เลื่อนได้แต่ไม่แสดง scrollbar */

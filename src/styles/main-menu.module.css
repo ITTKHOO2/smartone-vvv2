@@ -22,22 +22,22 @@
 
 .banner {
     background: linear-gradient(135deg, #add0f3, #ffffff);
-    color: #000000;
-    padding: 2rem 2rem;
-    width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    /* จัดแนวกลางแนวตั้ง */
     justify-content: center;
-    gap: 4rem; /* ระยะห่างระหว่าง logo และ text */
-    box-sizing: border-box;
-    position: relative;
-    top: 0;
+    /* จัดแนวกลางแนวนอน */
+    gap: 2rem;
+    /* ระยะห่างระหว่างภาพกับข้อความ */
+    padding: 2rem 3rem;
+    color: #000;
 }
 
 .banner-logo {
-    width: 120px;
-    height: 120px;
+    height: 7rem;
+    /* ปรับให้พอดีกับตัวหนังสือ */
+    width: auto;
+    /* รักษาอัตราส่วนภาพ */
     flex-shrink: 0;
 }
 
@@ -45,18 +45,20 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-size: 1.5rem;
-    max-width: 600px;
-    white-space: nowrap; /* ห้ามตัดบรรทัด */
+    text-align: left;
+}
+
+.banner-text h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .banner-subtitle {
+    font-size: 1.5rem;
     color: #008000;
-    margin: 1rem 0 0.5rem;
-    font-size: 2.5rem;
+    margin-top: 0.5rem;
     font-weight: bold;
-    line-height: 1.2;
-    white-space: nowrap; /* ห้ามตัดบรรทัด */
 }
 
 
@@ -125,12 +127,15 @@
 .card.swts {
     background: linear-gradient(135deg, #ea4ec9, #ff99cc);
 }
+
 .card.dashbord {
-    background: linear-gradient(135deg, #7fffd4, #20b2aa); /* ฟ้าอมเขียว-เขียวทะเล */
+    background: linear-gradient(135deg, #7fffd4, #20b2aa);
+    /* ฟ้าอมเขียว-เขียวทะเล */
 }
 
 .card.admin {
-    background: linear-gradient(135deg, #ffd700, #ffb347); /* เหลืองทอง-ส้มพีช */
+    background: linear-gradient(135deg, #ffd700, #ffb347);
+    /* เหลืองทอง-ส้มพีช */
 }
 
 .card h3 {
@@ -183,7 +188,8 @@
     }
 
     .banner-logo {
-        display: none; /* ซ่อนโลโก้ */
+        display: none;
+        /* ซ่อนโลโก้ */
     }
 
     .banner-text {
@@ -199,7 +205,7 @@
         white-space: normal;
     }
 
-    
+
 
     .card-container {
         flex-direction: column;
