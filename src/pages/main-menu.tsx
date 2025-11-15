@@ -10,7 +10,7 @@ import {
   FaClipboardCheck,
   FaUserShield,
 } from "react-icons/fa";
-import bannerLogo from "../assets/images/banner-logo.png";
+import bannerLogo from "../assets/images/banner-logo.webp";
 
 // ✅ MainMenu Component
 const MainMenu: React.FC = () => {
@@ -22,18 +22,18 @@ const MainMenu: React.FC = () => {
         <Header />
 
         <div className={styles.banner}>
-        <img
-          src={bannerLogo}
-          alt="Smart City Banner Logo"
-          className={styles.bannerLogo}
-        />
-        <div className={styles.bannerText}>
-          <h1>ระบบบริหารจัดการเมืองอัจฉริยะ</h1>
-          <h2 className={styles.bannerSubtitle}>
-            Smart City Management System
-          </h2>
+          <img
+            src={bannerLogo}
+            alt="Smart City Banner Logo"
+            className={styles.bannerLogo}
+          />
+          <div className={styles.bannerText}>
+            <h1>ระบบบริหารจัดการเมืองอัจฉริยะ</h1>
+            <h2 className={styles.bannerSubtitle}>
+              Smart City Management System
+            </h2>
+          </div>
         </div>
-      </div>
 
 
         <div className={styles.content}>
